@@ -13,72 +13,74 @@ Comet is a tiny, yet mighty, script that lives in a secret lair on your computer
 
 It's not magic, it's just a little bit of shell script wizardry. You give Comet a command, and it runs it, captures the output, and (if you want) sends it flying into your GitHub repository. All you have to do is tweak a simple config file. No coding required, we promise!
 
-## Let's Get This Party Started!
+## How to Get Started in 5 Minutes
 
-Ready to launch your first Comet? Let's do it!
+Follow these steps, and you'll be launching your first Comet in no time!
 
-### Before You Begin: The Checklist
+### Step 1: Download the Latest Release
 
-Before we launch this Comet, let's make sure the launchpad is ready. You'll need:
+First, you need to get the Comet scripts onto your computer.
 
-*   **Git:** Comet uses Git to work its magic. Most systems have it, but if not, you can grab it from the [official Git website](https://git-scm.com/downloads).
-*   **A GitHub Account:** Since Comet's ultimate destination is GitHub, you'll need an account. If you don't have one, you can sign up for free at [GitHub.com](https://github.com).
+1.  Go to the [**Releases page**](https://github.com/DWTlab/Comet/releases) of the Comet repository.
+2.  Look for the latest release.
+3.  Under the **Assets** section, click on `Source code (zip)` or `Source code (tar.gz)` to download the files.
 
+### Step 2: Unpack and Prepare the Scripts
 
-### Step 1: The Grand Installation
+Now that you have the files, you need to unpack them.
 
-First things first, you need to install Comet. Don't worry, it's easier than assembling IKEA furniture. Just open your terminal and run this command:
+1.  Open your terminal and navigate to your `Downloads` folder.
+    ```bash
+    cd ~/Downloads
+    ```
+2.  Unzip the downloaded file. The folder name will vary depending on the version you downloaded.
+    ```bash
+    # If you downloaded the .zip file
+    unzip Comet-1.0.0.zip 
+
+    # If you downloaded the .tar.gz file
+    tar -xvf Comet-1.0.0.tar.gz
+    ```
+3.  Now, step into the newly created directory.
+    ```bash
+    cd Comet-1.0.0
+    ```
+
+### Step 3: Run the Installer
+
+This is where the magic happens. The installer will copy the scripts to a hidden `.comet` directory in your home folder and set everything up.
 
 ```bash
 # Make the installer executable and run it
 chmod +x install.sh && ./install.sh
 ```
 
-This will create the `~/.comet` directory, copy the scripts, and make sure your system knows where to find them. It's like giving Comet a key to your city.
+**Heads-Up!** The installer adds the `comet` command to your system's PATH, which is like a list of shortcuts. Your terminal only reads this list when it starts up, so you'll need to **restart your terminal** or run `source ~/.bashrc` (or `~/.zshrc`) to make the new `comet` command work.
 
-### Step 2: Teach Comet Your Ways
+### Step 4: Configure Your Comet
 
-Now it's time to tell Comet what you want it to do. Open up the `config.sh` file in your favorite text editor. If you're new to the command line, `nano` is a great choice:
+Now it's time to tell Comet what you want it to do.
 
-```bash
-nano ~/.comet/config.sh
-```
+1.  Open the `config.sh` file in a text editor. `nano` is a great choice for beginners.
+    ```bash
+    nano ~/.comet/config.sh
+    ```
+2.  Inside, you'll find several variables. The most important one is `COMMAND_TO_RUN`. Set this to whatever command you want to track.
+3.  **To enable pushing to GitHub**, you'll need to set up a repository.
+    *   **Create a New Repo:** Go to [repo.new](https://repo.new) on GitHub. Give it a name (like `comet-logs`) and create it.
+    *   **Get the URL:** On the new repo's page, click the green `<> Code` button and copy the **HTTPS** URL.
+    *   **Set Up Authentication:** Make sure your computer is authorized to push to your GitHub account. Using a [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) is the recommended method.
+    *   **Update the Config:** Paste your repository URL into the `GIT_REPO_URL` variable in `config.sh` and make sure the line is uncommented.
 
-Inside, you'll find a few variables to play with. Here's the lowdown:
+### Step 5: Launch Your First Comet!
 
-| Variable | What It Does | Example |
-| --- | --- | --- |
-| `COMMAND_TO_RUN` | The command you want Comet to run for you. | `"echo 'Hello, space cowboy!'"` |
-| `OUTPUT_FILE` | The name of the file where Comet will stash the output. | `"my_awesome_output.txt"` |
-| `GIT_REPO_URL` | **(Optional)** Your GitHub repository URL. If you want Comet to push to GitHub, **uncomment this line** and paste your URL. | `"git@github.com:your-username/your-cool-repo.git"` |
-| `GIT_BRANCH` | The branch you want to push to. `main` is usually a good bet. | `"main"` |
-| `COMMIT_MESSAGE` | The witty message for your commit. | `"Comet: Houston, we have liftoff!"` |
-| `GIT_USERNAME` | **(Optional)** Your Git username. Uncomment to use. | `"Captain Kirk"` |
-| `GIT_EMAIL` | **(Optional)** Your Git email. Uncomment to use. | `"captain.kirk@starfleet.com"` |
-
-#### A Quick Detour: Setting Up Your GitHub Repo
-
-This is where Comet's journey ends. If you want Comet to push its findings to GitHub, you need a repository for it to call home.
-
-1.  **Create a New Repository:** Go to [repo.new](https://repo.new) on GitHub. Give it a cool name (like `comet-logs` or `my-digital-diary`) and click "Create repository."
-
-2.  **Grab the URL:** On your new repository's page, click the green `<> Code` button. You'll see a URL. **For an easier setup, I recommend using the HTTPS URL.** It looks like `https://github.com/your-username/your-cool-repo.git`. Copy it!
-
-3.  **Give Your Computer Access:** Your computer needs permission to push to your GitHub account. If you haven't done this before, GitHub has excellent guides on [setting up authentication](https://docs.github.com/en/get-started/getting-started-with-git/setting-your-username-in-git). Using a **Personal Access Token** is the modern way to do it!
-
-Now, back to our regular programming...
-
-### Step 3: Engage!
-
-Once you've configured Comet, you're ready for launch. Just type this into your terminal:
+You're all set! With your terminal restarted and your configuration saved, you're ready for launch.
 
 ```bash
 comet
 ```
 
-**Heads-Up!** The installer adds the `comet` command to your system's PATH, which is like a list of shortcuts. Your terminal only reads this list when it starts up, so you'll need to **restart your terminal** or run `source ~/.bashrc` (or `~/.zshrc`) to make the new `comet` command work.
-
-And that's it! Comet will do its thing, and you can sit back and relax. You've successfully automated the boring stuff. High five!
+And that's it! Comet will run your command, save the output, and push it to your GitHub repository. You've successfully automated the boring stuff. High five!
 
 ## Examples: Unleash the Power of Comet! (Now with more GitHub Goodness!)
 
