@@ -135,19 +135,6 @@ COMMIT_MESSAGE="Comet: System information baseline"
 
 This captures basic system details, OS info, network configuration, and disk usage. Great for debugging mysterious issues!
 
-## A Note on "Automatically Pulling from Repos on Shell Launch"
-
-You asked about automatically pulling from specific repos on shell launch. While Comet is fantastic for *pushing* command outputs to GitHub, it's not really designed for *pulling* code or updates from repositories.
-
-For automatically pulling changes from a Git repository when your shell launches, you'd typically add a `git pull` command directly to your shell's configuration file (like `~/.bashrc` or `~/.zshrc`).
-
-**Example for `~/.bashrc` (or `~/.zshrc`):**
-```bash
-# Navigate to your repo and pull changes
-cd /path/to/your/repo && git pull
-```
-
-This approach is more direct and efficient for keeping your local repositories up-to-date. Comet's strength lies in capturing and versioning the *output* of commands, not managing code repositories themselves.
 
 ## A Note for the Pros
 
