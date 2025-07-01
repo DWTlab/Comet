@@ -2,7 +2,7 @@
 
 Welcome to Comet, the script that's like a flight recorder for your command line, and so simple, your cat could probably use it (no offense to your cat). Ever run a command and wish you had a snapshot of the output from last week? Or maybe you want to spy on a webpage to see when it *finally* changes? Comet is your go-to gadget for this kind of digital time-travel.
 
-In a nutshell, Comet runs a command for you, saves the output to a file, and—here's the cool part—pushes it to a GitHub repository. This creates a neat, versioned history of... well, whatever you want! It's automation for the curious, the meticulous, and anyone who thinks `copy-paste` is a chore.
+In a nutshell, Comet runs a command for you, saves the output to a file, and pushes to Github. This creates a neat, versioned history of... well, whatever you want! It's automation for the curious, the meticulous, and anyone who thinks `copy-paste` is a chore.
 
 
 ## So, What's This Comet Thing Anyway?
