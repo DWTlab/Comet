@@ -15,7 +15,7 @@ OUTPUT_FILE="comet_output.txt"
 # The URL of your GitHub repository.
 # You can find this on your repository's page on GitHub.
 # To enable pushing to GitHub, uncomment the line below and add your repository URL.
-GIT_REPO_URL="git@github.com:DWTlab/comet.git"
+GIT_REPO_URL="git@github.com:DWTlab/Comet.git"
 
 # The branch to push your changes to.
 # The default is usually "main".

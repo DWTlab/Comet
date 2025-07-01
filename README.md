@@ -1,58 +1,66 @@
-# Comet: Automate Your Command Outputs
+# Comet: Your Friendly Neighborhood Command-Running Sidekick
 
-Welcome to Comet! This is a simple tool to help you automatically run a command, save its output, and upload it to GitHub. It's designed to be easy to use, even if you're new to scripts or the command line.
+Greetings, Earthling! Welcome to Comet, the script that's so simple, your cat could probably use it (no offense to your cat).
 
-## What is Comet?
+Ever find yourself running the same command over and over, like a hamster on a wheel? And then you have to copy the output, save it somewhere, and maybe even push it to GitHub? Sounds like a job for a robot. Or, even better, a Comet!
 
-Comet is a small, self-contained script that lives in a hidden `.comet` directory in your home folder. It's designed to be out of the way but easy to run whenever you need it.
+## So, What's This Comet Thing Anyway?
 
-## How It Works
+Comet is a tiny, yet mighty, script that lives in a secret lair on your computer (the `~/.comet` directory). It's designed to be your trusty sidekick, automating the boring stuff so you can get back to the important things, like watching cat videos.
 
-Comet is configured by editing the `comet.sh` script directly. You don't need to understand the code to use it. Just open the file, fill in your details, and run it.
+## How Does This Magic Work?
 
-## Getting Started
+It's not magic, it's just a little bit of shell script wizardry. You give Comet a command, and it runs it, captures the output, and (if you want) sends it flying into your GitHub repository. All you have to do is tweak a simple config file. No coding required, we promise!
 
-Follow these steps to get Comet up and running on your system.
+## Let's Get This Party Started!
 
-### Step 1: Installation
+Ready to launch your first Comet? Let's do it!
 
-To install Comet, run the following command in your terminal. This will create the `~/.comet` directory, move the necessary files, and set everything up for you.
+### Step 1: The Grand Installation
+
+First things first, you need to install Comet. Don't worry, it's easier than assembling IKEA furniture. Just open your terminal and run this command:
 
 ```bash
-# Run the installer
+# Make the installer executable and run it
 chmod +x install.sh && ./install.sh
 ```
 
-### Step 2: Configuration
+This will create the `~/.comet` directory, copy the scripts, and make sure your system knows where to find them. It's like giving Comet a key to your city.
 
-Once Comet is installed, you need to configure it. Open the `comet.sh` script in a text editor:
+### Step 2: Teach Comet Your Ways
+
+Now it's time to tell Comet what you want it to do. Open up the `config.sh` file in your favorite text editor. If you're new to the command line, `nano` is a great choice:
 
 ```bash
-nano ~/.comet/comet.sh
+nano ~/.comet/config.sh
 ```
 
-At the top of the file, you'll see a `Configuration` section. This is where you'll tell the script what to do.
+Inside, you'll find a few variables to play with. Here's the lowdown:
 
-| Variable | What to Do | Example |
+| Variable | What It Does | Example |
 | --- | --- | --- |
-| `COMMAND_TO_RUN` | The command you want the script to run. | `"ls -la"` |
-| `OUTPUT_FILE` | The name of the file where the output will be saved. | `"comet_output.txt"` |
-| `GIT_REPO_URL` | **(Optional)** The URL of your GitHub repository. To enable pushing to GitHub, **uncomment this line** and paste your URL. | `"git@github.com:your-username/your-repo.git"` |
-| `GIT_BRANCH` | The branch you want to push to. `main` is a safe default. | `"main"` |
-| `COMMIT_MESSAGE` | The message for your commit. | `"Comet: Automated update"` |
-| `GIT_USERNAME` | **(Optional)** Your Git username. Uncomment to use. | `"Your Name"` |
-| `GIT_EMAIL` | **(Optional)** Your Git email. Uncomment to use. | `"your.email@example.com"` |
+| `COMMAND_TO_RUN` | The command you want Comet to run for you. | `"echo 'Hello, space cowboy!'"` |
+| `OUTPUT_FILE` | The name of the file where Comet will stash the output. | `"my_awesome_output.txt"` |
+| `GIT_REPO_URL` | **(Optional)** Your GitHub repository URL. If you want Comet to push to GitHub, **uncomment this line** and paste your URL. | `"git@github.com:your-username/your-cool-repo.git"` |
+| `GIT_BRANCH` | The branch you want to push to. `main` is usually a good bet. | `"main"` |
+| `COMMIT_MESSAGE` | The witty message for your commit. | `"Comet: Houston, we have liftoff!"` |
+| `GIT_USERNAME` | **(Optional)** Your Git username. Uncomment to use. | `"Captain Kirk"` |
+| `GIT_EMAIL` | **(Optional)** Your Git email. Uncomment to use. | `"captain.kirk@starfleet.com"` |
 
-### Step 3: Running Comet
+### Step 3: Engage!
 
-Once you've configured Comet, you can run it from your terminal at any time:
+Once you've configured Comet, you're ready for launch. Just type this into your terminal:
 
 ```bash
-~/.comet/comet.sh
+comet.sh
 ```
 
-That's it! The script will now run your command, save the output to the `~/.comet` directory, and push it to your GitHub repository.
+And that's it! Comet will do its thing, and you can sit back and relax. You've successfully automated the boring stuff. High five!
+
+## A Note for the Pros
+
+Hey there, seasoned veteran! You've probably noticed that Comet is just a simple shell script. That's the beauty of it! Feel free to tinker with it, extend it, or even rewrite it in Rust if that's your jam. It's your script now.
 
 ## License
 
-This project is licensed under the MIT License.
+Comet is licensed under the MIT License. Go forth and do cool things with it.
