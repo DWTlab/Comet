@@ -135,6 +135,19 @@ COMMIT_MESSAGE="Comet: System information baseline"
 
 This captures basic system details, OS info, network configuration, and disk usage. Great for debugging mysterious issues!
 
+### 6. API Data Snapshot (For the Data-Minded Developer)
+
+Need to track changes in data from an API? Comet can fetch and save it periodically!
+
+**`config.sh` setup:**
+```bash
+COMMAND_TO_RUN="curl -s https://api.github.com/users/octocat"
+OUTPUT_FILE="octocat_profile.json"
+COMMIT_MESSAGE="Comet: Octocat API profile snapshot"
+```
+
+This example fetches the Octocat GitHub profile. Replace the URL with any API endpoint you want to monitor. Just be mindful of API rate limits!
+
 
 ## A Note for the Pros
 
