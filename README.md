@@ -4,6 +4,7 @@ Greetings, Earthling! Welcome to Comet, the script that's so simple, your cat co
 
 Ever find yourself running the same command over and over, like a hamster on a wheel? And then you have to copy the output, save it somewhere, and maybe even push it to GitHub? Sounds like a job for a robot. Or, even better, a Comet!
 
+
 ## So, What's This Comet Thing Anyway?
 
 Comet is a tiny, yet mighty, script that lives in a secret lair on your computer (the `~/.comet` directory). It's designed to be your trusty sidekick, automating the boring stuff so you can get back to the important things, like watching cat videos.
@@ -15,6 +16,7 @@ It's not magic, it's just a little bit of shell script wizardry. You give Comet 
 ## Let's Get This Party Started!
 
 Ready to launch your first Comet? Let's do it!
+
 
 ### Step 1: The Grand Installation
 
