@@ -52,8 +52,10 @@ Inside, you'll find a few variables to play with. Here's the lowdown:
 Once you've configured Comet, you're ready for launch. Just type this into your terminal:
 
 ```bash
-comet.sh
+comet
 ```
+
+**Important:** If this is your first time running `comet` after installation, you might need to restart your terminal or run `source ~/.bashrc` (or `source ~/.zshrc` if you're a zsh user) for the `comet` command to be recognized.
 
 And that's it! Comet will do its thing, and you can sit back and relax. You've successfully automated the boring stuff. High five!
 

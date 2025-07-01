@@ -47,10 +47,20 @@ if ! grep -q "export PATH=\"$INSTALL_DIR:\$PATH\"" "$SHELL_CONFIG_FILE"; then
   echo "" >> "$SHELL_CONFIG_FILE"
   echo "# Add Comet to PATH" >> "$SHELL_CONFIG_FILE"
   echo "export PATH=\"$INSTALL_DIR:\$PATH\"" >> "$SHELL_CONFIG_FILE"
-  echo "Installation complete!"
-  echo "Please restart your terminal or run 'source $SHELL_CONFIG_FILE' to use the 'comet.sh' command."
 else
   echo "Comet is already in your PATH."
+fi
+
+# Add an alias for the comet command.
+if ! grep -q "alias comet=" "$SHELL_CONFIG_FILE"; then
+  echo "Adding 'comet' alias to $SHELL_CONFIG_FILE"
+  echo "" >> "$SHELL_CONFIG_FILE"
+  echo "# Alias for Comet" >> "$SHELL_CONFIG_FILE"
+  echo "alias comet='sh $HOME/.comet/comet.sh'" >> "$SHELL_CONFIG_FILE"
+  echo "Installation complete!"
+  echo "Please restart your terminal or run 'source $SHELL_CONFIG_FILE' to use the 'comet' command."
+else
+  echo "'comet' alias already exists."
 fi
 
 echo "Comet installation finished."
