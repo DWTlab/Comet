@@ -66,11 +66,20 @@ Now it's time to tell Comet what you want it to do.
     nano ~/.comet/config.sh
     ```
 2.  Inside, you'll find several variables. The most important one is `COMMAND_TO_RUN`. Set this to whatever command you want to track.
-3.  **To enable pushing to GitHub**, you'll need to set up a repository.
-    *   **Create a New Repo:** Go to [repo.new](https://repo.new) on GitHub. Give it a name (like `comet-logs`) and create it.
-    *   **Get the URL:** On the new repo's page, click the green `<> Code` button and copy the **HTTPS** URL.
-    *   **Set Up Authentication:** Make sure your computer is authorized to push to your GitHub account. Using a [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) is the recommended method.
-    *   **Update the Config:** Paste your repository URL into the `GIT_REPO_URL` variable in `config.sh` and make sure the line is uncommented.
+3.  To enable pushing to GitHub, you'll need to set up a repository.
+
+#### A Quick Detour: Setting Up Your GitHub Repo
+This is where Comet's journey ends. If you want Comet to push its findings to GitHub, you need a repository for it to call home.
+
+1.  **Create a New Repository:** Go to [repo.new](https://repo.new) on GitHub. Give it a cool name (like `comet-logs` or `my-digital-diary`) and click "Create repository."
+
+2.  **Grab the URL:** On your new repository's page, click the green `<> Code` button. You'll see a URL. **For an easier setup, I recommend using the HTTPS URL.** It looks like `https://github.com/your-username/your-cool-repo.git`. Copy it!
+
+3.  **Give Your Computer Access:** Your computer needs permission to push to your GitHub account. If you haven't done this before, GitHub has excellent guides on [setting up authentication](https://docs.github.com/en/get-started/getting-started-with-git/setting-your-username-in-git). Using a **Personal Access Token** is the modern way to do it!
+
+Now, back to our regular programming...
+
+4.  Paste your repository URL into the `GIT_REPO_URL` variable in `config.sh` and make sure the line is uncommented.
 
 ### Step 5: Launch Your First Comet!
 
