@@ -52,4 +52,4 @@ else
   echo "GIT_REPO_URL is not set. Skipping GitHub push."
 fi
 
-echo "Comet script finished."
+echo "Comet Launched!"
